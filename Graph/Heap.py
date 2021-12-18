@@ -5,7 +5,9 @@ Created on Thu Dec  2 20:06:57 2021
 @author: Nekokan1500
 """
 
-class Node:
+import Common as common
+
+class HeapNode(common.Node):
     def __init__(self,value,key):
         self.key = key
         self.value = value
@@ -199,24 +201,14 @@ class Heap1:
 
 if __name__ == "__main__":
     heap = Heap()
-    heap.insert(Node('a',13))
-    heap.insert(Node('b',4))
-    heap.insert(Node('c',11))
-    heap.insert(Node('d',4))
-    heap.insert(Node('e',9))
-    heap.insert(Node('f',8))
-    heap.insert(Node('g',12))
-    heap.insert(Node('h',9))
-    heap.insert(Node('i',4))
-    heap.insert(Node('j',3))
+    heap.insert(HeapNode('a',13))
+    heap.insert(HeapNode('b',4))
+    heap.insert(HeapNode('c',11))
+    heap.insert(HeapNode('d',4))
+    heap.insert(HeapNode('e',9))
+    heap.insert(HeapNode('f',8))
+    heap.insert(HeapNode('g',12))
+    heap.insert(HeapNode('h',9))
+    heap.insert(HeapNode('i',4))
+    heap.insert(HeapNode('j',3))
     heap.print_heap()
-    #print(heap.extractMin().key)
-    #heap.print_heap()
-    #print(heap.extractMin().key)
-    #heap.print_heap()
-    #print(heap.extractMin().key)
-    #heap.print_heap()
-    #print(heap.extractMin().key)
-    #heap.print_heap()
-    #print(heap.extractMin().key)
-    #heap.print_heap()

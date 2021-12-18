@@ -4,51 +4,13 @@ Created on Thu Dec 16 14:28:45 2021
 
 @author: Nekokan1500
 """
-
 from collections import deque
+from Common import Graph
 
 class Node:
     def __init__(self,value):
         self.value = value
         self.explored = False
-        
-class Graph:
-    def __init__(self):
-        self.vertices = []
-        self.edges = {}
-    
-    def add_node(self,v):
-        if v not in self.vertices:
-            self.vertices.append(v)
-            
-    def add_node_by_value(self,v):
-        values = [node.value for node in self.vertices]
-        if v not in values:
-            node = Node(v)
-            self.vertices.append(node)
-            
-    def add_nodes(self,nodes):
-        for node in nodes:
-            self.add_node(node)
-    
-    def add_nodes_by_value(self,nodes):
-        for node in nodes:
-            self.add_node_by_value(node)
-            
-    def get_node(self,v):
-        return next(vertex for vertex in self.vertices if vertex.value == v)
-    
-    def add_edge(self,s,d,cost):
-        values = [node.value for node in self.vertices]
-        if s in values and d in values:
-            if s not in self.edges:
-                self.edges[s] = [(d,cost)]
-            else:
-                self.edges[s].append((d,cost))
-        elif s not in values:
-            print(str(s) + " is not a node in the graph.")
-        elif d not in values:
-            print(str(d) + " is not a node in the graph.")
 
 # Breadth-first search: check if there is a path from vertice s to d in graph
 def BFS(graph,s,d):
