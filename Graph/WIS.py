@@ -36,6 +36,20 @@ def wis(vertices):
             A[i] = max(mwis_1,mwis_2)
     return A[len(vertices)]
 
+# reconstruct the MWIS based on A
+def get_mwis(vertices,A):
+    MWIS = []
+    i = len(A)-1
+    while i >= 1:
+        if A[i-1] >= A[i-2] + vertices[i-1].weight:
+            i -= 1
+        else:
+            MWIS.append(vertices[i-1].value)
+            i -= 2
+    if i == 1:
+        MWIS.append(vertices[0].value)
+    return MWIS
+
 # Test data
 graph = Graph()
 graph.add_node(WISNode('a',3))
@@ -50,5 +64,6 @@ if __name__ == "__main__":
     A[0] = 0
     A[1] = graph.vertices[0].weight
     TW = wis(graph.vertices)
-    print(TW)
+    MWIS = get_mwis(graph.vertices, A)
+    print(MWIS)
         
