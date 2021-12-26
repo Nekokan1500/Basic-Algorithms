@@ -94,6 +94,16 @@ if __name__ == "__main__":
     R = Bellman_Ford(graph, s_node)
     print(R)
 
+# output
+"""
+[[ 0. inf inf inf inf]
+ [ 0.  4.  2. inf inf]
+ [ 0.  1.  2.  4.  8.]
+ [ 0.  1.  2.  4.  5.]
+ [ 0.  1.  2.  4.  5.]
+ [nan nan nan nan nan]]
+"""
+
 
             
     
