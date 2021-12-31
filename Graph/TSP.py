@@ -61,4 +61,4 @@ graph.add_edge('c', 'd', 6)
 
 if __name__ == "__main__":
     P = TSP(graph)
-    print(P)
+    print(P) # (['a', 'b', 'd', 'c', 'a'], 13)
